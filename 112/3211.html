@@ -120,6 +120,7 @@
                 <li class="page-item"><a class="page-link" href="#section3">師資安排</a></li>
                 <li class="page-item"><a class="page-link" href="#section4">學生學習</a></li>
                 <li class="page-item"><a class="page-link" href="#section5">經費運用</a></li>
+                <li class="page-item"><a class="page-link" href="#section6">設備環境</a></li>
             </ul>
         </nav>
     </div>
@@ -332,6 +333,13 @@
                     </div>
                 </div>
             </div>
+                <!-- Section 1: 課程安排 -->
+    <div class="container mt-5" id="section6">
+        <h3>設備環境</h3>
+        <div class="row" id="pdfCardsContainer6">
+            <!-- Cards for section 1 will be inserted here -->
+        </div>
+    </div>
     <!-- Top Anchor -->
     <a name="top"></a>
 
@@ -346,55 +354,66 @@
         <script src="footer.js"></script>
         <script src="backToTop.js"></script>
         <script src="modals.js"></script>
+
         <script>
-            // Initializes content after the DOM is fully loaded
             document.addEventListener('DOMContentLoaded', function() {
                 initializeContent();
             });
-    
+        
             function initializeContent() {
                 // Data for PDF and image cards for Section 1
                 const pdfImageData1 = [
-                    { src: "321/1/1/A.jpg", alt: "Image A", modalId: "imageModal1A", type: "img" },
-                    { src: "https://drive.google.com/file/d/1MMwnx_X8O4iK_uL2ISH3BqO1LrsT19bw/preview", title: "PDF 1", type: "pdf" },
-                    { src: "https://drive.google.com/file/d/1RQ-hs5LoXE8OyYHnyBFjYOyYewy1AK3X/preview", title: "PDF 2", type: "pdf" },
-                    { src: "https://drive.google.com/file/d/17WuHIvMpTz1nPRIWzkZIH71fcGAHd8Uj/preview", title: "PDF 3", type: "pdf" },
-                    { src: "https://drive.google.com/file/d/1tF6B6zdkYuiGQqbAwuXcZ-wxBSI91Jop/preview", title: "PDF 4", type: "pdf" }
+                    { src: "321/1/1/A.jpg", alt: "技藝課程單元表", modalId: "imageModal1A", type: "img" },
+                    { src: "https://drive.google.com/file/d/16YWKFAdug5LwnMfjO4q8OTHUu3dGKaTK/preview", title: "醫護類教材", type: "pdf" },
+                    { src: "https://drive.google.com/file/d/1jKufc1kOgy4bB_J-Sh8ZXVaJml1SyXaz/preview", title: "112培英國中技藝教育課程計劃書仁德護理", type: "pdf" },
+                    { src: "https://drive.google.com/file/d/1MMwnx_X8O4iK_uL2ISH3BqO1LrsT19bw/preview", title: "生命徵象講義", type: "pdf" },
+                    { src: "https://drive.google.com/file/d/1RQ-hs5LoXE8OyYHnyBFjYOyYewy1AK3X/preview", title: "急救與心肺復甦術講義", type: "pdf" },
+                    { src: "https://drive.google.com/file/d/17WuHIvMpTz1nPRIWzkZIH71fcGAHd8Uj/preview", title: "護理基本工作(營養的補充)講義", type: "pdf" },
+                    { src: "https://drive.google.com/file/d/1tF6B6zdkYuiGQqbAwuXcZ-wxBSI91Jop/preview", title: "營養與膳食講義", type: "pdf" }
                 ];
-    
+        
                 // Data for PDF and image cards for Section 2
                 const pdfImageData2 = [
-                    { src: "321/1/2/A.jpg", alt: "Image A", modalId: "imageModal2A", type: "img" },
-                    { src: "321/1/2/B.jpg", alt: "Image B", modalId: "imageModal2B", type: "img" },
-                    { src: "321/1/2/C.jpg", alt: "Image C", modalId: "imageModal2C", type: "img" }
+                    { src: "321/1/2/A.jpg", alt: "", modalId: "imageModal2A", type: "img" },
+                    { src: "321/1/2/B.jpg", alt: "", modalId: "imageModal2B", type: "img" },
+                    { src: "321/1/2/C.jpg", alt: "", modalId: "imageModal2C", type: "img" }
                 ];
-    
+        
                 // Data for PDF and image cards for Section 3
                 const pdfImageData3 = [
-                    { src: "321/1/3/A.jpg", title: "", modalId: "imageModal3A", type: "img" },
+                    { src: "321/1/3/A.jpg", alt: "", modalId: "imageModal3A", type: "img" },
                     { src: "321/1/3/B.jpg", alt: "", modalId: "imageModal3B", type: "img" },
-                    { src: "321/1/3/C.jpg", alt: "", modalId: "imageModal3C", type: "img" },
+                    { src: "321/1/3/C.jpg", alt: "", modalId: "imageModal3C", type: "img" }
                 ];
-    
+        
                 // Data for PDF and image cards for Section 4
                 const pdfImageData4 = [
-                    { src: "321/1/4/A.jpg", alt: "Image A", modalId: "imageModal4A", type: "img" },
-                    { src: "321/1/4/B.jpg", alt: "Image B", modalId: "imageModal4B", type: "img" },
-                    { src: "321/1/4/C.jpg", alt: "Image C", modalId: "imageModal4C", type: "img" }
+                    { src: "321/1/4/A.jpg", alt: "", modalId: "imageModal4A", type: "img" },
+                    { src: "321/1/4/B.jpg", alt: "", modalId: "imageModal4B", type: "img" },
+                    { src: "321/1/4/C.jpg", alt: "", modalId: "imageModal4C", type: "img" }
                 ];
+        
+                // Data for PDF and image cards for Section 5
                 const pdfImageData5 = [
-                    { src: "321/1/5/A.jpg", alt: "Image A", modalId: "imageModal5A", type: "img" },
-                    { src: "321/1/5/B.jpg", alt: "Image B", modalId: "imageModal5B", type: "img" },
-                    { src: "321/1/5/C.jpg", alt: "Image C", modalId: "imageModal5C", type: "img" }
+                    { src: "321/1/5/A.jpg", alt: "", modalId: "imageModal5A", type: "img" },
+                    { src: "321/1/5/B.jpg", alt: "", modalId: "imageModal5B", type: "img" },
+                    { src: "321/1/5/C.jpg", alt: "", modalId: "imageModal5C", type: "img" }
                 ];
+        
+                // Data for PDF in Section 6
+                const pdfImageData6 = [
+                    { src: "https://drive.google.com/file/d/1syiMrge5rws3UvLp6pJiQUHl8lovjiTn/preview", title: "仁德醫護教學設備與環境", type: "pdf" }
+                ];
+        
                 // Add content to each section
                 addCardsToContainer(pdfImageData1, document.getElementById('pdfCardsContainer1'));
                 addCardsToContainer(pdfImageData2, document.getElementById('pdfCardsContainer2'));
                 addCardsToContainer(pdfImageData3, document.getElementById('pdfCardsContainer3'));
                 addCardsToContainer(pdfImageData4, document.getElementById('pdfCardsContainer4'));
                 addCardsToContainer(pdfImageData5, document.getElementById('pdfCardsContainer5'));
+                addCardsToContainer(pdfImageData6, document.getElementById('pdfCardsContainer6'));
             }
-    
+        
             // Function to add cards to a container
             function addCardsToContainer(dataArray, container) {
                 dataArray.forEach(item => {
@@ -402,7 +421,7 @@
                     colDiv.className = 'col-md-4 mb-4';
                     const cardDiv = document.createElement('div');
                     cardDiv.className = 'card h-100';
-    
+        
                     if (item.type === "img") {
                         const img = document.createElement('img');
                         img.src = item.src;
@@ -411,6 +430,15 @@
                         img.setAttribute('data-bs-toggle', 'modal');
                         img.setAttribute('data-bs-target', `#${item.modalId}`);
                         cardDiv.appendChild(img);
+        
+                        // Add title for image cards
+                        const cardBody = document.createElement('div');
+                        cardBody.className = 'card-body';
+                        const cardTitle = document.createElement('h5');
+                        cardTitle.className = 'card-title';
+                        cardTitle.textContent = item.alt;
+                        cardBody.appendChild(cardTitle);
+                        cardDiv.appendChild(cardBody);
                     } else if (item.type === "pdf") {
                         const iframe = document.createElement('iframe');
                         iframe.src = item.src;
@@ -418,13 +446,23 @@
                         iframe.style.height = '380px';
                         iframe.frameBorder = '0';
                         cardDiv.appendChild(iframe);
+        
+                        // Add title for PDF cards
+                        const cardBody = document.createElement('div');
+                        cardBody.className = 'card-body';
+                        const cardTitle = document.createElement('h5');
+                        cardTitle.className = 'card-title';
+                        cardTitle.textContent = item.title;
+                        cardBody.appendChild(cardTitle);
+                        cardDiv.appendChild(cardBody);
                     }
-    
+        
                     colDiv.appendChild(cardDiv);
                     container.appendChild(colDiv);
                 });
             }
         </script>
+        
     </body>
 </body>
 </html>
