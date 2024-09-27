@@ -107,8 +107,8 @@
             max-width: 100%;
             height: auto;
         }
-               /* 響應式設計 */
-               @media (max-width: 768px) {
+        /* 響應式設計 */
+        @media (max-width: 768px) {
             h2 {
                 font-size: 2rem;
             }
@@ -143,10 +143,9 @@
             <!-- First card -->
             <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="14/1.jpg" class="card-img-top" alt="Image 1" data-bs-toggle="modal" data-bs-target="#imageModal1">
+                    <iframe src="https://drive.google.com/file/d/1NgcNwntV6F9SOMFcT3B8-qaTQCBC6BAI/preview" class="card-img-top" frameborder="0" style="height: 300px;"></iframe>
                     <div class="card-body">
-                     
-                        <p class="card-text">技藝教育的相關。</p>
+                        <p class="card-text">技藝教育的相關資料。</p>
                     </div>
                 </div>
             </div>
@@ -154,39 +153,10 @@
             <!-- Second card -->
             <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="14/2.jpg" class="card-img-top" alt="Image 2" data-bs-toggle="modal" data-bs-target="#imageModal2">
+                    <iframe src="https://drive.google.com/file/d/1FjGJ0c38mPksnGZvi8yo53KplF4wlnCc/preview" class="card-img-top" frameborder="0" style="height: 300px;"></iframe>
                     <div class="card-body">
-                       
-                        <p class="card-text">技藝教育的相關。</p>
+                        <p class="card-text">技藝教育的更多內容。</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal for Image 1 -->
-    <div class="modal fade" id="imageModal1" tabindex="-1" aria-labelledby="imageModal1Label" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="14/1.jpg" class="img-fluid" alt="Image 1">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal for Image 2 -->
-    <div class="modal fade" id="imageModal2" tabindex="-1" aria-labelledby="imageModal2Label" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="14/2.jpg" class="img-fluid" alt="Image 2">
                 </div>
             </div>
         </div>
@@ -202,5 +172,17 @@
     <script src="footer.js"></script>
     <script src="backToTop.js"></script>
     <script src="modals.js"></script>
+
+    <script>
+        // Show or hide the back-to-top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
