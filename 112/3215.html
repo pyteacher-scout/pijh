@@ -197,6 +197,42 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="imageModal16" tabindex="-1" aria-labelledby="imageModal16Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="321/5/6.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="imageModal17" tabindex="-1" aria-labelledby="imageModal17Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="321/5/7.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="imageModal18" tabindex="-1" aria-labelledby="imageModal18Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="321/5/8.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Back to top button -->
     <a href="#top">
         <img src="icon/arrow.png" class="back-to-top" alt="返回本頁頂部" width="26px">
@@ -212,7 +248,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             initializeContent();
         });
-
+    
         function initializeContent() {
             const pdfImageData = [
                 { src: "321/5/1.jpg", alt: "東泰電機上課進度表", modalId: "imageModal11", type: "img" },
@@ -220,24 +256,22 @@
                 { src: "321/5/3.jpg", alt: "電機與電子職群目錄51", modalId: "imageModal13", type: "img" },
                 { src: "321/5/4.jpg", alt: "電機與電子職群目錄119", modalId: "imageModal14", type: "img" },
                 { src: "321/5/5.jpg", alt: "國中技藝教育課程課程表", modalId: "imageModal15", type: "img" },
-                
                 { src: "321/5/6.jpg", alt: "東泰電機點名單", modalId: "imageModal16", type: "img" },
-                { src: "321/5/7.jpg", alt: "東泰電機點名單2", modalId: "imageModal17", type: "img" }, 
+                { src: "321/5/7.jpg", alt: "東泰電機點名單2", modalId: "imageModal17", type: "img" },
                 { src: "321/5/8.jpg", alt: "陳永炎教師證書", modalId: "imageModal18", type: "img" },
-                { src: "preview", title: "東泰電機-教學與環境設施(電機電子)", modalId: "", type: "pdf" },
-                { src: "preview", title: "電機與電子職群51", modalId: "", type: "pdf" },
-                { src: "preview", title: "電機與電子職群119", modalId: "", type: "pdf" },
-
+                { src: "https://drive.google.com/file/d/1G6whlfjRwloNQulAy1JJuGAn59TCRUt0/preview", title: "東泰電機-教學與環境設施(電機電子)", modalId: "", type: "pdf" },
+                { src: "https://drive.google.com/file/d/1DwcwbsbnFzJFrevpO9fBRhynAsQWZnhP/preview", title: "電機與電子職群51", modalId: "", type: "pdf" },
+                { src: "https://drive.google.com/file/d/15zOq08vE85jqxWMp7s3IEzMHWDe8PAGc/preview", title: "電機與電子職群119", modalId: "", type: "pdf" },
             ];
-
+    
             const pdfContainer = document.getElementById('pdfCardsContainer');
-
+    
             pdfImageData.forEach(item => {
                 const colDiv = document.createElement('div');
                 colDiv.className = 'col-md-4 mb-4';
                 const cardDiv = document.createElement('div');
-                cardDiv.className = 'card';
-
+                cardDiv.className = 'card h-100';
+    
                 if (item.type === 'pdf') {
                     const iframe = document.createElement('iframe');
                     iframe.src = item.src;
@@ -245,7 +279,7 @@
                     iframe.style.height = '380px';
                     iframe.frameBorder = '0';
                     cardDiv.appendChild(iframe);
-
+    
                     const cardBody = document.createElement('div');
                     cardBody.className = 'card-body';
                     const cardTitle = document.createElement('h5');
@@ -261,12 +295,21 @@
                     img.setAttribute('data-bs-toggle', 'modal');
                     img.setAttribute('data-bs-target', `#${item.modalId}`);
                     cardDiv.appendChild(img);
+    
+                    const cardBody = document.createElement('div');
+                    cardBody.className = 'card-body';
+                    const cardTitle = document.createElement('h5');
+                    cardTitle.className = 'card-title text-center mt-2';
+                    cardTitle.textContent = item.alt;  // Adding title for images
+                    cardBody.appendChild(cardTitle);
+                    cardDiv.appendChild(cardBody);
                 }
-
+    
                 colDiv.appendChild(cardDiv);
                 pdfContainer.appendChild(colDiv);
             });
         }
     </script>
+    
 </body>
 </html>
