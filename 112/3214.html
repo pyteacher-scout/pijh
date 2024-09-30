@@ -61,7 +61,7 @@
 
         .link-group a {
             color: #fff;
-            background-color: #28a745; /* 綠色背景 */
+            background-color: #28a745;
             font-weight: bold;
             text-decoration: none;
             padding: 10px 20px;
@@ -73,8 +73,8 @@
 
         .link-group a:hover {
             background-color: #fff;
-            color: #28a745; /* 滑過時顯示綠色字體 */
-            border: 1px solid #28a745; /* 增加綠色邊框 */
+            color: #28a745;
+            border: 1px solid #28a745;
         }
 
         .pagination {
@@ -132,19 +132,21 @@
 </head>
 
 <body>
-        <!-- Top Anchor -->
-        <a name="top"></a>
+    <!-- Top Anchor -->
+    <a name="top"></a>
     <div class="container">
         <h2 class="my-4 text-center">竹工-電機</h2>
         <!-- Links -->
         <div class="link-group">
             <a href="32141.html">竹工-電機上課照片</a>
             <a href="32142.html">竹工-電機職群</a>
-
         </div>
+
+        <!-- Cards for Images and PDFs -->
         <div class="row" id="pdfCardsContainer"></div>
     </div>
 
+    <!-- Modal for Image 1A -->
     <div class="modal fade" id="imageModal1A" tabindex="-1" aria-labelledby="imageModal1ALabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -152,12 +154,67 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <img src="321/4/A.jpg" class="img-fluid" alt="">
+                    <img src="321/4/1.jpg" class="img-fluid" alt="竹工電機成績">
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Modal for Image 1B -->
+    <div class="modal fade" id="imageModal1B" tabindex="-1" aria-labelledby="imageModal1BLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="321/4/2.jpg" class="img-fluid" alt="滿意度調查表">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Image 1C -->
+    <div class="modal fade" id="imageModal1C" tabindex="-1" aria-labelledby="imageModal1CLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="321/4/3.jpg" class="img-fluid" alt="竹工電機點名單">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Image 1D -->
+    <div class="modal fade" id="imageModal1D" tabindex="-1" aria-labelledby="imageModal1DLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="321/4/4.jpg" class="img-fluid" alt="竹工電機點名單2">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Image 1E -->
+    <div class="modal fade" id="imageModal1E" tabindex="-1" aria-labelledby="imageModal1ELabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="321/4/5.jpg" class="img-fluid" alt="竹工電機上課進度表">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Back to top button -->
     <a href="#top">
@@ -175,24 +232,28 @@
         document.addEventListener('DOMContentLoaded', function() {
             initializeContent();
         });
-    
+
         function initializeContent() {
-            // Data for PDF and image cards for Section 1
+            // Data for PDF and image cards
             const pdfImageData = [
-                { src: "321/4/A.jpg", alt: "112-2 竹工電機電子群教學進度表", modalId: "imageModal1A", type: "img" },
-                { src: "https://drive.google.com/file/d/1WCJooAFLFWXUM1dvHflrnKJw1gbPhJaE/preview", title: "竹工實習工場實習日誌", type: "pdf" },
-                { src: "https://drive.google.com/file/d/1yRt7ixZuWP7G5CjYlV_F0bYlIQdIAeRt/preview", title: "竹工電機電子群點名簿", type: "pdf" },
-                { src: "https://drive.google.com/file/d/1sDYSMzBaFbxvcZhZuw_hkVZN2ASJ6IaG/preview", title: "竹工開辦國中技藝教育課程申請表", type: "pdf" }
+                { src: "321/4/1.jpg", alt: "竹工電機成績", modalId: "imageModal1A", type: "img" },
+                { src: "321/4/2.jpg", alt: "滿意度調查表", modalId: "imageModal1B", type: "img" },
+                { src: "321/4/3.jpg", alt: "竹工電機點名單", modalId: "imageModal1C", type: "img" },
+                { src: "321/4/4.jpg", alt: "竹工電機點名單2", modalId: "imageModal1D", type: "img" },
+                { src: "321/4/5.jpg", alt: "竹工電機上課進度表", modalId: "imageModal1E", type: "img" },
+                { src: "https://drive.google.com/file/d/1EVJpQCbcDbX3NztfY_JsJy8YG_paBnaA/preview", title: "竹工實習工場實習日誌", type: "pdf" },
+                { src: "https://drive.google.com/file/d/1194rV8NUIZ5Epp8J7nZcQhGrjj25S6t6/preview", title: "申請表", type: "pdf" },
+                { src: "https://drive.google.com/file/d/1Z3vCVcfoqU9eChlx3HQoAv_rCUZw-tX-/preview", title: "電機電子群教學進度表", type: "pdf" }
             ];
-    
+
             const pdfContainer = document.getElementById('pdfCardsContainer');
-    
+
             pdfImageData.forEach(item => {
                 const colDiv = document.createElement('div');
                 colDiv.className = 'col-md-4 mb-4';
                 const cardDiv = document.createElement('div');
                 cardDiv.className = 'card';
-    
+
                 if (item.type === 'pdf') {
                     const iframe = document.createElement('iframe');
                     iframe.src = item.src;
@@ -200,7 +261,7 @@
                     iframe.style.height = '380px';
                     iframe.frameBorder = '0';
                     cardDiv.appendChild(iframe);
-    
+
                     const cardBody = document.createElement('div');
                     cardBody.className = 'card-body';
                     const cardTitle = document.createElement('h5');
@@ -216,7 +277,7 @@
                     img.setAttribute('data-bs-toggle', 'modal');
                     img.setAttribute('data-bs-target', `#${item.modalId}`);
                     cardDiv.appendChild(img);
-    
+
                     const cardBody = document.createElement('div');
                     cardBody.className = 'card-body';
                     const cardTitle = document.createElement('h5');
@@ -225,12 +286,11 @@
                     cardBody.appendChild(cardTitle);
                     cardDiv.appendChild(cardBody);
                 }
-    
+
                 colDiv.appendChild(cardDiv);
                 pdfContainer.appendChild(colDiv);
             });
         }
     </script>
-    
 </body>
 </html>
