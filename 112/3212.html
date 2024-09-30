@@ -54,6 +54,29 @@
             max-width: 1200px;
         }
 
+        .link-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .link-group a {
+            color: #fff;
+            background-color: #28a745; /* 綠色背景 */
+            font-weight: bold;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 10px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .link-group a:hover {
+            background-color: #fff;
+            color: #28a745; /* 滑過時顯示綠色字體 */
+            border: 1px solid #28a745; /* 增加綠色邊框 */
+        }
+
         .pagination {
             font-size: 1.2rem;
             margin-bottom: 30px;
@@ -114,6 +137,12 @@
     
     <div class="container">
         <h2 class="my-4 text-center">各校資料 世界-設計、餐旅</h2>
+        
+        <div class="link-group">
+            <a href="32121.html">上課照片</a>
+
+        </div>
+
         <div class="row" id="pdfCardsContainer"></div>
     </div>
     <div class="modal fade" id="imageModal11" tabindex="-1" aria-labelledby="imageModal11Label" aria-hidden="true">
@@ -243,24 +272,30 @@
         document.addEventListener('DOMContentLoaded', function() {
             initializeContent();
         });
-
+    
         function initializeContent() {
             // Data for PDF and image cards for Section 1
             const pdfImageData = [
-                { src: "321/2/1.jpg", alt: "", modalId: "imageModal11", type: "img" },
-                { src: "321/2/2.jpg", alt: "", modalId: "imageModal12", type: "img" },
-                { src: "321/2/3.jpg", alt: "", modalId: "imageModal13", type: "img" },
-                { src: "321/2/4.jpg", alt: "", modalId: "imageModal14", type: "img" },
-                { src: "321/2/5.jpg", alt: "", modalId: "imageModal15", type: "img" },
-                { src: "321/2/6.jpg", alt: "", modalId: "imageModal16", type: "img" },
-                { src: "321/2/7.jpg", alt: "", modalId: "imageModal17", type: "img" },
-                { src: "321/2/8.jpg", alt: "", modalId: "imageModal18", type: "img" },
+                { src: "321/2/1.jpg", alt: "設計上課進度表", modalId: "imageModal11", type: "img", title: "設計上課進度表" },
+                { src: "321/2/2.jpg", alt: "世界設計成績", modalId: "imageModal12", type: "img", title: "世界設計成績" },
+                { src: "321/2/3.jpg", alt: "設計點名表1", modalId: "imageModal13", type: "img", title: "設計點名表1" },
+                { src: "321/2/4.jpg", alt: "設計點名表2", modalId: "imageModal14", type: "img", title: "設計點名表2" },
+                { src: "321/2/5.jpg", alt: "學習滿意度調查表", modalId: "imageModal15", type: "img", title: "學習滿意度調查表" },
+                { src: "321/2/6.jpg", alt: "餐飲上課進度表", modalId: "imageModal16", type: "img", title: "餐飲上課進度表" },
+                { src: "321/2/7.jpg", alt: "餐飲點名表1", modalId: "imageModal17", type: "img", title: "餐飲點名表1" },
+                { src: "321/2/8.jpg", alt: "餐飲點名表2", modalId: "imageModal18", type: "img", title: "餐飲點名表2" },
+                { src: "321/2/9.jpg", alt: "世界餐飲成績", modalId: "imageModal19", type: "img", title: "世界餐飲成績" },
+                { src: "https://drive.google.com/file/d/14A8RUOvfAPQtQb8GYsSN-Wf8ej379_SB/preview", title: "113學年度合作式國中技藝教育課程開班表", type: "pdf" },
+                { src: "https://drive.google.com/file/d/14aIAIDUq6Uj4RV-l708DOeXA0WfRFCMM/preview", title: "1131國中技藝班餐旅群專業教室使用表", type: "pdf" },
+                { src: "https://drive.google.com/file/d/1-SmhBYyNsI34byE75vSByuwRjZsavJxf/preview", title: "教學環境設備與安全措施", type: "pdf" },
+                { src: "https://drive.google.com/file/d/1ch0FW1FEBRtCvO3-sETx_3Ekn_xVjfpN/preview", title: "經費概算表", type: "pdf" },
+                { src: "https://drive.google.com/file/d/1ZrRnIRdUP5MVqiVgtIVTBvpi7slrV5IM/preview", title: "課程進度表", type: "pdf" }
             ];
-
+    
             // Add content to the container
             addCardsToContainer(pdfImageData, document.getElementById('pdfCardsContainer'));
         }
-
+    
         // Function to add cards to a container
         function addCardsToContainer(dataArray, container) {
             dataArray.forEach(item => {
@@ -268,7 +303,7 @@
                 colDiv.className = 'col-md-4 mb-4';
                 const cardDiv = document.createElement('div');
                 cardDiv.className = 'card h-100';
-
+    
                 if (item.type === "img") {
                     const img = document.createElement('img');
                     img.src = item.src;
@@ -277,6 +312,16 @@
                     img.setAttribute('data-bs-toggle', 'modal');
                     img.setAttribute('data-bs-target', `#${item.modalId}`);
                     cardDiv.appendChild(img);
+    
+                    // Adding title for the image
+                    const cardBody = document.createElement('div');
+                    cardBody.className = 'card-body';
+                    const cardTitle = document.createElement('h5');
+                    cardTitle.className = 'card-title';
+                    cardTitle.textContent = item.title;
+                    cardBody.appendChild(cardTitle);
+                    cardDiv.appendChild(cardBody);
+    
                 } else if (item.type === "pdf") {
                     const iframe = document.createElement('iframe');
                     iframe.src = item.src;
@@ -284,12 +329,22 @@
                     iframe.style.height = '380px';
                     iframe.frameBorder = '0';
                     cardDiv.appendChild(iframe);
+    
+                    // Adding title for the PDF
+                    const cardBody = document.createElement('div');
+                    cardBody.className = 'card-body';
+                    const cardTitle = document.createElement('h5');
+                    cardTitle.className = 'card-title';
+                    cardTitle.textContent = item.title;
+                    cardBody.appendChild(cardTitle);
+                    cardDiv.appendChild(cardBody);
                 }
-
+    
                 colDiv.appendChild(cardDiv);
                 container.appendChild(colDiv);
             });
         }
     </script>
+    
 </body>
 </html>
