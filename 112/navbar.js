@@ -89,13 +89,7 @@ function createNavBar() {
                 { name: '特色及推動', link: '3-4.html' }
             ]
         },
-        {
-            name: '其他',
-            submenu: [
-                { name: '生涯教學資料', link: '4-1.html' },
-                { name: '關於我們', link: 'about.html' }
-            ]
-        }
+
     ];
 
     menuItems.forEach(item => {
