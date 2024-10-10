@@ -1,6 +1,6 @@
 function createModals() {
     const modalsHtml = `
-    <!--全校班級數 Modal -->
+    <!-- 全校班級數 Modal -->
     <div class="modal fade" id="classModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="classModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
             <div class="modal-content">
@@ -41,9 +41,7 @@ function createModals() {
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="3">
-                                    包含美術班、音樂班、體育班、舞蹈班、特教班等
-                                </td>
+                                <td colspan="3">包含美術班、音樂班、體育班、舞蹈班、特教班等</td>
                             </tr>
                         </tfoot>
                     </table>
@@ -55,49 +53,16 @@ function createModals() {
         </div>
     </div>
 
-    <!--教師人數 Modal -->
+    <!-- 教師人數 Modal -->
     <div class="modal fade" id="teacherModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="teacherModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg"> <!-- 使用 modal-lg 類別 -->
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="teacherModalLabel">教師人數</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th scope="col">類別</th>
-                                <th scope="col">教師人數（人）</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>員額編制</td>
-                                <td>197</td>
-                            </tr>
-                            <tr>
-                                <td>編制內正式教師</td>
-                                <td>164</td>
-                            </tr>
-                            <tr>
-                                <td>代理教師</td>
-                                <td>33</td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2">任教輔導活動科教師人數</td>
-                                <td>6</td>
-                            </tr>
-                            <tr>
-                                <td>具輔導活動科合格教師證人數</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>不具輔導活動科合格教師證人數</td>
-                                <td>1</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="modal-body text-center">
+                    <img src="m1.jpg" alt="教師人數" class="img-fluid">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
@@ -106,7 +71,7 @@ function createModals() {
         </div>
     </div>
 
-    <!--辦理相關經費 Modal -->
+    <!-- 辦理相關經費 Modal -->
     <div class="modal fade" id="fundingModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="fundingModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
             <div class="modal-content">
@@ -158,8 +123,8 @@ function createModals() {
             </div>
         </div>
     </div>
-    
-    <!--技藝教育抽離式課程 Modal -->
+
+    <!-- 技藝教育抽離式課程 Modal -->
     <div class="modal fade" id="skillCourseModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="skillCourseModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
             <div class="modal-content">
@@ -216,7 +181,7 @@ function createModals() {
                                     6. 其他：<br>
                                 </td>
                             </tr>
-                            <!-- 更多数据 -->
+                            <!-- 更多数据可在此添加 -->
                         </tbody>
                     </table>
                 </div>
@@ -227,9 +192,9 @@ function createModals() {
         </div>
     </div>`;
 
-    // 将所有的模态窗口插入到页面中
+    // 將模態窗口的HTML插入到頁面中的<body>標籤之後
     document.body.insertAdjacentHTML('beforeend', modalsHtml);
 }
 
-// 呼叫函数来创建并插入模态窗口
+// 呼叫函數以創建並插入模態窗口
 createModals();
