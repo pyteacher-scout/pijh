@@ -26,24 +26,24 @@
             margin: 0;
             padding: 0;
         }
-
+    
         /* 統一標題樣式 */
         h2, h3 {
             font-weight: bold;
             color: #007bff;
         }
-
+    
         h2 {
             font-size: 2.5rem;
             text-align: center;
             margin: 20px 0;
         }
-
+    
         h3 {
             font-size: 1.75rem;
             margin-bottom: 20px;
         }
-
+    
         /* 統一段落樣式 */
         p {
             font-size: 1.1rem;
@@ -51,30 +51,31 @@
             color: #555;
             margin-bottom: 20px;
         }
-
+    
         /* 容器的間距和樣式 */
         .container {
             margin-top: 20px;
             max-width: 1200px;
         }
-
+    
         /* 統一分頁樣式 */
         .pagination {
             font-size: 1.2rem;
             margin-bottom: 30px;
         }
-
+    
         .page-item .page-link {
             color: #007bff;
             font-weight: bold;
             transition: all 0.3s ease;
         }
-
+    
         .page-item .page-link:hover {
             background-color: #007bff;
             color: #fff;
+            font-size: 1.5rem; /* 當滑過時字體變大 */
         }
-
+    
         /* 統一返回頂部按鈕樣式 */
         .back-to-top {
             position: fixed;
@@ -88,31 +89,32 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
-
+    
         .back-to-top:hover {
             background-color: #0056b3;
         }
-
+    
         /* 響應式設計 */
         @media (max-width: 768px) {
             h2 {
                 font-size: 2rem;
             }
-
+    
             h3 {
                 font-size: 1.5rem;
             }
-
+    
             .pagination {
                 font-size: 1rem;
             }
-
+    
             .back-to-top {
                 bottom: 20px;
                 right: 20px;
             }
         }
     </style>
+    
 </head>
 
 <body>
@@ -229,6 +231,19 @@
                         </div>
                     </div>
                 </div>
+                                   <!-- Modal for Image H 組織運作-->
+                                   <div class="modal fade" id="imageModal1G" tabindex="-1" aria-labelledby="imageModal1GLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <img src="311/1/8.jpg" class="img-fluid" alt="Image A">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                 <div class="container mt-5" id="section2">
                     <h3>宣導溝通</h3>
                     <div class="row">
@@ -356,6 +371,7 @@
                 { src: "311/1/5.jpg", alt: "112-1遴輔會組織", modalId: "imageModal1E", type: "img" },
                 { src: "311/1/6.jpg", alt: "112學年度生涯適性輔導與技藝教育課程遊輔會議", modalId: "imageModal1F", type: "img" },
                 { src: "311/1/7.jpg", alt: "112-2遴輔會組織", modalId: "imageModal1G", type: "img" },
+                { src: "311/1/8.jpg", alt: "112學年度第一學期-技藝課程遴輔會會議記錄", modalId: "imageModal1G", type: "img" },
                 { src: "https://drive.google.com/file/d/15vjyk-wFUHh0yRfZMTUxB364cmkoBKSG/preview", alt: "112-1技藝教育課程遴輔會", modalId: "", type: "pdf" },
                 { src: "https://drive.google.com/file/d/1HB_pL1qWE-aA4O3QQRWEspfyAlaKbwkK/preview", alt: "112-2技藝教育課程遴輔會", modalId: "", type: "pdf" },
                 { src: "https://drive.google.com/file/d/1V0-wQkUmor8s7booWLuYOF5N7niB01l3/preview", alt: "112學年度國民中學技藝教育課程班申辦計畫書合作", modalId: "", type: "pdf" },
