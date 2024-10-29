@@ -50,7 +50,29 @@
             color: #555;
             margin-bottom: 20px;
         }
-    
+        .right-aligned {
+    display: flex;
+    justify-content: flex-start; /* 使內容靠右 */
+}
+
+.special-link {
+    background-color: #28a745; /* 綠色背景 */
+    color: #ffffff; /* 白色文字 */
+    padding: 5px 10px; /* 增加間距 */
+    border-radius: 4px; /* 圓角 */
+    text-decoration: none; /* 移除預設下劃線 */
+    transition: background-color 0.3s, color 0.3s; /* 平滑過渡效果 */
+    margin-left: 10px; /* 左間距，使按鈕之間有空間 */
+}
+
+.special-link:hover {
+    background-color: #ffffff; /* 懸停變成白色背景 */
+    color: #28a745; /* 文字變成綠色 */
+    border: 1px solid #28a745; /* 添加綠色邊框 */
+}
+
+
+
         /* 容器的間距和樣式 */
         .container {
             margin-top: 20px;
